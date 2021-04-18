@@ -168,5 +168,6 @@
 
   .get-new-color {
     max-width: 30px;
+    margin-bottom: 50px;
   }
 }
