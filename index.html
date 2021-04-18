@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="message-to-copy">
+      <p>Click on the color code to copy to your clipboard</p>
+      <p data-percentage></p>
+    </div>
+    <div class="wrapper-color-picker">
+      <div class="color-picker one">
+        <div class="hex-and-color-picker">
+          <p id="elementOne" date-color></p>
+          <img
+            src="./get-color.png"
+            alt=""
+            class="get-new-color"
+            date-new-color
+          />
+        </div>
+        <div class="color-picker-one" data-color-position></div>
+        <div class="clipboard">
+          <p>Color copied to clipboard</p>
+        </div>
+      </div>
+      <div class="color-picker two">
+        <div class="hex-and-color-picker">
+          <p id="elementTwo" date-color></p>
+          <img
+            src="./get-color.png"
+            alt=""
+            class="get-new-color"
+            date-new-color
+          />
+        </div>
+        <div class="color-picker-two" data-color-position></div>
+        <div class="clipboard">
+          <p>Color copied to clipboard</p>
+        </div>
+      </div>
+      <div class="color-picker three">
+        <div class="hex-and-color-picker">
+          <p id="elementThree" date-color></p>
+          <img
+            src="./get-color.png"
+            alt=""
+            class="get-new-color"
+            date-new-color
+          />
+        </div>
+        <div class="color-picker-three" data-color-position></div>
+        <div class="clipboard">
+          <p>Color copied to clipboard</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./iro.js-master/dist/iro.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

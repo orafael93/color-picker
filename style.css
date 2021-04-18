@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper-color-picker {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+.color-picker {
+  position: relative;
+}
+.hex-and-color-picker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 3px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+[date-color],
+.get-new-color {
+  cursor: pointer;
+}
+[data-color-position] {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+[data-color-position].active {
+  display: block;
+  animation: 0.5s animateColorPicker cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+@keyframes animateColorPicker {
+  from {
+    opacity: 0;
+    bottom: 0;
+  }
+  to {
+    opacity: 1;
+    bottom: 50px;
+  }
+}
+.one,
+.two,
+.three {
+  transition: 0.1s ease-in-out;
+}
+.color-picker-one,
+.color-picker-two,
+.color-picker-three {
+  cursor: pointer;
+}
+.get-new-color {
+  display: block;
+  margin-top: 20px;
+}
+.clipboard {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 30px;
+  background-color: #fff;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.clipboard p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #000;
+  text-transform: uppercase;
+}
+.clipboard.active {
+  display: flex;
+  animation: animationModal 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+@keyframes animationModal {
+  from {
+    opacity: 0;
+    top: 55%;
+  }
+  to {
+    opacity: 1;
+    top: 60%;
+  }
+}
+.message-to-copy {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.message-to-copy p {
+  color: #eee;
+  font-size: 4em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  @keyframes animationModal {
+    to {
+      top: 60%;
+    }
+  }
+
+  [data-color-position].active {
+    display: block;
+    animation: 0.5s animateColorPicker cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      forwards;
+  }
+
+  .message-to-copy p {
+    font-size: 1.8em;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .wrapper-color-picker {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+
+  .hex-and-color-picker {
+    font-size: 1.6em;
+  }
+
+  .color-picker-one,
+  .color-picker-two,
+  .color-picker-three {
+    display: flex;
+    justify-content: center;
+    right: 0;
+    bottom: -500px;
+  }
+
+  .IroColorPicker .IroWheel,
+  .IroColorPicker .IroSlider {
+    margin: 0 auto;
+  }
+
+  .hex-and-color-picker {
+    top: 80%;
+    margin-top: 10px;
+  }
+
+  .get-new-color {
+    max-width: 30px;
+  }
+}
